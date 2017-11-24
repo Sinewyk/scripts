@@ -11,8 +11,9 @@ NEXT_DEPLOY_COPY_PATH=$RELEASES_PATH/$TIMESTAMP
 
 build() {
   cd $REPO_PATH
-  git pull origin master
-  yarn
+  git fetch origin
+  git reset --hard origin/master
+  yarn --frozen-lockfile
   yarn build
 }
 
