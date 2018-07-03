@@ -9,6 +9,6 @@ if [ $? -ne 0 ]
 		echo -e "The Let's Encrypt cert has not been renewed! \n \n" \
 		$ERRORLOG
 	else
-		nginx -s reload
+		service nginx reload
 	fi
 exit 0
