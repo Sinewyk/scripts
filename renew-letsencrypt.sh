@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cd /opt/letsencrypt/
-./certbot-auto --config /etc/letsencrypt/configs/sinewyk.com.conf certonly
+sudo ./certbot-auto --config /etc/letsencrypt/configs/sinewyk.com.conf certonly
 
 if [ $? -ne 0 ]
 	then
@@ -9,6 +9,6 @@ if [ $? -ne 0 ]
 		echo -e "The Let's Encrypt cert has not been renewed! \n \n" \
 		$ERRORLOG
 	else
-		service nginx reload
+		sudo service nginx reload
 	fi
 exit 0
