@@ -15,7 +15,8 @@ sudo apt-get install -y --no-install-recommends man-db \
   zsh \
   ca-certificates \
   vim \
-  ssh
+  ssh \
+  build-essential
 
 # git config
 git config --global user.email "sinewyk@gmail.com"
