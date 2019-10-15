@@ -27,4 +27,4 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/maste
 
 # ssh conf windows => wsl
 cp -R /mnt/c/Users/Sinewyk/.ssh .ssh
-chown -R 700 .ssh
+chmod -R 700 .ssh
