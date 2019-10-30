@@ -4,7 +4,7 @@
 # For now just "rust" is there for rustup
 # Exemple: `sudo ./scripts/install_wsl.sh 'rust'`
 
-set -euxo pipefail
+set -exo pipefail
 
 PSEUDO=sinewyk
 EMAIL=sinewyk@gmail.com
@@ -30,13 +30,14 @@ sudo apt-get install -y --no-install-recommends man-db \
 git config --global user.name "$PSEUDO"
 git config --global user.email "$EMAIL"
 
+# oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 # rust detected ?
 if [[ $WHAT_TO_INSTALL == *"rust"* ]]; then
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> $HOME/.zshrc
 fi
-
-# oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # ssh conf windows => wsl
 cp -R /mnt/c/Users/$WINDOWS_USER/.ssh .ssh
