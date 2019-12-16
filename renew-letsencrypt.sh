@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cd /opt/letsencrypt/
-sudo ./certbot-auto --config /etc/letsencrypt/configs/sinewyk.com.conf certonly
+sudo ./certbot-auto renew
 
 if [ $? -ne 0 ]
 	then
