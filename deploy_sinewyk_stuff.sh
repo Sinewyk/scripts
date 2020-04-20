@@ -13,8 +13,8 @@ build() {
   cd $REPO_PATH
   git fetch origin
   git reset --hard origin/master
-  yarn --frozen-lockfile
-  yarn build
+  npm i
+  npm run build
 }
 
 copy() {
