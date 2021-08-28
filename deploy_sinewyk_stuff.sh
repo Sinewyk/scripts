@@ -13,8 +13,8 @@ build() {
   cd $REPO_PATH
   git fetch origin
   git reset --hard origin/master
-  npm i
-  npm run build
+  pnpm i --frozen-lockfile
+  pnpm run build
 }
 
 copy() {
